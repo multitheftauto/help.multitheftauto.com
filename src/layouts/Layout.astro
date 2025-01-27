@@ -1,0 +1,168 @@
+---
+import NoTranslate from '@src/components/NoTranslate.astro';
+import * as defaults from '@src/constants/defaults';
+import "@src/components/Stylesheet.astro";
+
+type Props = {
+    title?: string;
+    description?: string;
+}
+
+const props = Astro.props as Props;
+const title = props.title ? `${props.title} — ${defaults.SITE_TITLE}` : defaults.SITE_TITLE;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <title>{title}</title>
+    </head>
+    <body>
+        <nav>
+            <a href="https://multitheftauto.com" rel="noopener">Home</a>
+            <a class="keepMobile" href="https://discord.com/invite/mtasa" rel="noopener" target="_blank">Discord</a>
+            <a href="https://community.multitheftauto.com" rel="noopener">Community</a>
+            <a href="https://forum.multitheftauto.com" rel="noopener">Forum</a>
+            <a class="keepMobile" href="https://wiki.multitheftauto.com/wiki/Main_Page" rel="noopener">Wiki</a>
+            <a class="keepMobile" href="https://github.com/multitheftauto/mtasa-blue/issues" rel="noopener" target="_blank">Bugs</a>
+            <a href="https://multitheftauto.com/donate/" rel="noopener">Heroes</a>
+            <a href="https://multitheftauto.com/hosters/" rel="noopener">Hosting</a>
+            <a href="https://community.multitheftauto.com/index.php?p=servers">Servers</a>
+            <a href="https://streamlabs.com/mtaqa/merch" rel="noopener" target="_blank">Merch</a>
+            <a href="https://multitheftauto.crowdin.com/multitheftauto" rel="noopener" target="_blank">Crowdin</a>
+            <span id="onlinePlayers"></span>
+            <script>
+                function updateOnlinePlayers() {
+                    var onlinePlayersEl = document.getElementById("onlinePlayers");
+                    if (onlinePlayersEl) {
+                        fetch("https://multitheftauto.com/count/")
+                            .then(function(r) {
+                                return r.text();
+                            })
+                            .then(function(r) {
+                                var info = r.split(",");
+                                if (info[0] && info[1]) {
+                                    onlinePlayersEl.innerHTML = new Intl.NumberFormat("en-US").format(info[0]) + " players online on " + new Intl.NumberFormat("en-US").format(info[1]) + " public servers";
+                                }
+                            });
+                    }
+                }
+                updateOnlinePlayers();
+                setInterval(updateOnlinePlayers, 300000);
+            </script>
+        </nav>
+
+        <header>
+            <div class="inner">
+                <img id="logo" src="/assets/logo.png" alt="Multi Theft Auto" />
+            </div>
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <footer>
+            <div class="inner">
+                <h3>If you still have problems...</h3>
+                <p>
+                    Contact us on <a href="https://discord.com/invite/mtasa"><NoTranslate>Discord</NoTranslate></a>
+                    or on our <a href="https://forum.multitheftauto.com/forum/82-support-for-mtasa-1x/">forum</a>.
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
+
+<style>
+    nav {
+        align-items: center;
+        background: #0B0B0F;
+        color: #9F9FA2;
+        display: flex;
+        gap: 20px;
+        height: 40px;
+        padding: 0 1em;
+        white-space: nowrap;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        font-size: 14px;
+        font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav a {
+        color: #9F9FA2;
+        border: 0;
+        padding: 7px 0;
+        transition: color 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #onlinePlayers {
+        margin-left: auto;
+        position: relative;
+    }
+
+    @keyframes onlinePlayers {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    #onlinePlayers:not(:empty)::before {
+        animation: onlinePlayers 1s infinite forwards alternate;
+        background: lightgreen;
+        border-radius: 100px;
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        top: 50%;
+        left: -6px;
+        margin-left: 10px;
+        opacity: 0;
+        position: relative;
+        transform: translate(-50%, -50%);
+        width: 6px;
+    }
+
+    header {
+        background: #151b23 url(/assets/color-strip.png) no-repeat left bottom / 100% 3px;
+        overflow: hidden;
+    }
+
+    /* Add padding and a width limit to the primary content blocks */
+    header > .inner, main, footer {
+        padding: 1em;
+        margin: 0 auto;
+        max-width: 1080px;
+    }
+
+    main {
+        padding-bottom: 0;
+    }
+
+    footer > .inner {
+        background: #2d3a4b;
+        border: 1px solid #394a60;
+        border-radius: 5px;
+        padding: 1em;
+    }
+
+    #logo {
+        max-width: 50%;
+        max-height: 50%;
+    }
+</style>
