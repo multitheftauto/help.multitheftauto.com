@@ -1,0 +1,42 @@
+---
+title: 'ASI files'
+description: 'ASI files have been found'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+
+MTA detected ASI files either in your GTA:SA or MTA installation directory.
+
+<Steps>
+    1. Navigate to your GTA San Andreas installation directory.
+
+    2. Remove all *.asi files in that directory and subdirectories.  
+        The example file tree below highlights a subdirectory where you can find ASI files.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - scripts/
+                - **SilenPathSA.asi**  removable this file
+                - …
+            - text/
+            - eax.dll
+            - gta_sa.exe
+            - ogg.dll
+            - vorbis.dll
+            - vorbisFile.dll
+        </FileTree>
+
+        :::note
+        You can use the search function from Windows Explorer to search for these ASI files with ease.
+        By utilizing a wildcard search like `*.asi`, the search results will only contain files that
+        end with the ASI suffix.
+        :::
+
+    3. Navigate to your MTA San Andreas installation directory and repeat step 2 there.
+</Steps>
