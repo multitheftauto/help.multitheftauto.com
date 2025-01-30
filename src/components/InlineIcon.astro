@@ -1,13 +1,7 @@
 ---
 import { Icon } from '@astrojs/starlight/components';
 
-interface Props {
-    name: string;
-    label?: string;
-    color?: string;
-    size?: string;
-    class?: string;
-}
+type Props = Parameters<typeof Icon>[0];
 ---
 
 <div class="mta-inline-icon">

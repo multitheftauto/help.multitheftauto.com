@@ -4,10 +4,13 @@
 import type { HTMLAttributes } from 'astro/types';
 import { Icon } from '@astrojs/starlight/components';
 
+type IconProps = Parameters<typeof Icon>[0];
+type StarlightIcon = IconProps['name'];
+
 interface Props extends Omit<HTMLAttributes<'a'>, 'title'> {
     title: string;
     description?: string;
-    icon?: string;
+    icon?: StarlightIcon;
 }
 
 const { title, description, icon, ...attributes } = Astro.props;
