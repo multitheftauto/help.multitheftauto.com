@@ -1,0 +1,32 @@
+---
+title: 'Serial Validation'
+description: 'MTA was unable to validate your serial'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import InlineIcon from '@src/components/InlineIcon.astro';
+
+MTA was unable to validate your serial.
+
+### <InlineIcon name="seti:windows" /> Microsoft Windows
+<Steps>
+    1. Install and run MTA outside of any Virtual Machine.
+
+    2. Retry MTA inside the Virtual Machine.
+</Steps>
+
+### <InlineIcon name="linux" /> Linux
+<Steps>
+    1. Install and run the [Linux MTA server](https://wiki.multitheftauto.com/wiki/Installing_and_Running_MTASA_Server_on_GNU_Linux) (as root) outside of any Virtual Machine.
+
+    2. Retry MTA client inside the Virtual Machine.
+</Steps>
+
+### <InlineIcon name="apple" /> macOS
+<Steps>
+    1. [Download and run this file](https://nightly.multitheftauto.com/files/osx/OSXMTATool.zip) on your Mac outside of any Virtual Machine  
+        (If OS X refues to run the tool, open System Preferences, then click Security & Privacy, then click the “Open Anyway” button)
+
+    2. Retry MTA inside the Virtual Machine.
+</Steps>
