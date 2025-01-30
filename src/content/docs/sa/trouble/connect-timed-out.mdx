@@ -1,0 +1,85 @@
+---
+title: 'Connection Timeout'
+description: 'Troubleshooting for connection timeout reasons'
+tableOfContents: false
+---
+
+import { CardGrid, FileTree, Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import ClientDownload from '@src/components/ClientDownload.astro';
+import AntiVirusDownload from '@src/components/AntiVirusDownload.astro';
+import * as defaults from '@src/content.constants';
+
+## Timeout Codes
+
+#### `00070000` or `0A050000`
+
+:::danger
+MTA detected possible virus/malware activity on your device.  
+Locate and remove the virus from your device and then reinstall Multi Theft Auto.
+
+You can find the [download](#download) links at the bottom of the page.
+:::
+
+#### `FF0B0000` or `FF0B0121`
+
+[Download](#download) the latest installer for Multi Theft Auto, and run it to update
+your installation the latest release.
+
+#### `03040033`
+
+This issue is caused by a software called `Evolve`, which is interfering with MTA.
+You must remove that software, if you want to play Multi Theft Auto.
+
+#### `4D0?????` or `4E0?????` or `4F0?????`
+
+<Steps>
+    1. Download the files below.
+
+        <CardGrid>
+            <IconLinkCard
+                icon="cloud-download"
+                title="ogg.dll"
+                href={`${defaults.CDN_URL}/files/ogg.dll`} />
+
+            <IconLinkCard
+                icon="cloud-download"
+                title="vorbis.dll"
+                href={`${defaults.CDN_URL}/files/vorbis.dll`} />
+
+            <IconLinkCard
+                icon="cloud-download"
+                title="vorbisFile.dll"
+                href={`${defaults.CDN_URL}/files/vorbisFile.dll`} />
+        </CardGrid>
+
+    2. Copy these files to your GTA:SA installation directory.
+        Overwrite any pre-existing files, if Windows prompts you about it.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - **ogg.dll** copy it here
+            - **vorbis.dll** copy it here
+            - **vorbisFile.dll** copy it here
+            - gta_sa.exe
+            - …
+        </FileTree>
+</Steps>
+
+#### `????????`
+
+Other timeout codes can be caused by malware, virus or by corrupted files either in your GTA:SA or MTA installation directory. You should first try reinstalling MTA, and, if the issue persists, download and install one of the anti-virus products below.
+
+## Download
+
+### Anti-Virus
+<AntiVirusDownload />
+
+### Multi Theft Auto
+<ClientDownload />
