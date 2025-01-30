@@ -18,7 +18,7 @@ export default defineConfig({
                 src: './src/assets/logo.png',
             },
             titleDelimiter: '—',
-            pagination: false,
+            lastUpdated: true,
             editLink: {
                 baseUrl: 'https://github.com/multitheftauto/help.multitheftauto.com/edit/main/',
             },
@@ -28,6 +28,9 @@ export default defineConfig({
                 youtube: 'https://youtube.com/user/mtaqa',
                 twitch: 'https://twitch.tv/mtaqa',
                 'x.com': 'https://x.com/mtaqa',
+            },
+            components: {
+                Pagination: './src/overrides/Pagination.astro',
             },
             sidebar: [
                 {
