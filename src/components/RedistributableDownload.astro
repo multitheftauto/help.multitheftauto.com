@@ -1,0 +1,17 @@
+---
+import { CardGrid } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import * as defaults from '@src/content.constants';
+---
+
+<CardGrid>
+    <IconLinkCard
+        icon="seti:windows"
+        title="Microsoft Visual C++ 2013 Redistributable Package"
+        href=`${defaults.CDN_URL}/files/vcredist_2013_x86.exe` />
+
+    <IconLinkCard
+        icon="seti:windows"
+        title="Microsoft Visual C++ 2015 Redistributable Package"
+        href=`${defaults.CDN_URL}/files/vcredist_2015_x86.exe` />
+</CardGrid>

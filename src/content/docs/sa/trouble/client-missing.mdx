@@ -1,0 +1,30 @@
+---
+title: 'client.dll missing'
+description: 'An essential MTA library is missing'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import ClientDownload from '@src/components/ClientDownload.astro';
+import RedistributableDownload from '@src/components/RedistributableDownload.astro';
+
+<Steps>
+    1. Install Microsoft runtime components.
+
+        <RedistributableDownload />
+
+    2. Install the latest release of Multi Theft Auto.
+
+        <ClientDownload />
+
+    3. Try to run Multi Theft Auto again.
+
+        :::note
+        Consider restarting your computer after these installations for good measure, if
+        MTA still fails to launch.
+
+        And do not despair, you can always contact us either on Discord or in the forums.
+        You can find the links at the bottom of the page.
+        :::
+</Steps>
