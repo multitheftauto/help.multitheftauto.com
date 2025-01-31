@@ -50,7 +50,6 @@ export default defineConfig({
                 {
                     label: 'Troubleshooting',
                     autogenerate: { directory: 'sa/trouble' },
-                    collapsed: true,
                 },
             ],
         }),
