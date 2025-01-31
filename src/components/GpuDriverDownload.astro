@@ -1,0 +1,18 @@
+---
+import { CardGrid } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+---
+
+<CardGrid>
+    <IconLinkCard
+        icon="external"
+        title="NVIDIA"
+        description="Download latest drivers for NVIDIA GPUs"
+        href="https://www.nvidia.com/en-us/drivers/" />
+
+    <IconLinkCard
+        icon="external"
+        title="AMD"
+        description="Download latest drivers for AMD GPUs"
+        href="https://www.amd.com/en/support/download/drivers.html" />
+</CardGrid>

@@ -1,0 +1,41 @@
+---
+title: 'Direct3D CreateDevice error'
+description: 'The DirectX runtime failed to create a device to represent your hardware device.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ClientDownload from '@src/components/ClientDownload.astro';
+import DirectXDownload from '@src/components/DirectXDownload.astro';
+import GpuDriverDownload from '@src/components/GpuDriverDownload.astro';
+
+<Steps>
+    1. Download and install the legacy DirectX runtime.
+
+        <DirectXDownload />
+
+    2. Install the latest release of Multi Theft Auto.
+
+        <ClientDownload />
+
+    3. Update your graphic card drivers.
+
+        <GpuDriverDownload />
+
+    4. If you have a notebook/laptop, visit the manufacturer's website
+        and download the most recent drivers for your device, including the latest graphics driver.
+
+        - [Acer](https://www.acer.com/us-en/support)
+        - [ASUS](https://www.asus.com/support/)
+        - [Toshiba](https://support.dynabook.com/support/drivers)
+
+    5. Try to run Multi Theft Auto again.
+</Steps>
+
+:::note
+Consider restarting your computer after these installations for good measure, if
+MTA still fails to launch.
+
+And do not despair, you can always contact us either on Discord or in the forums.
+You can find the links at the bottom of the page.
+:::
