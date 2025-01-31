@@ -9,6 +9,10 @@ const siteBaseUrl = isDeploy ? constants.SITE_URL : undefined;
 
 export default defineConfig({
     site: siteBaseUrl,
+    redirects: {
+        '/sa/trouble/crashing-before-gtagame/':   '/sa/trouble/general/',
+        '/sa/trouble/crashing-before-gtalaunch/': '/sa/trouble/general/',
+    },
     integrations: [
         starlight({
             plugins: [mtasaStarlightThemePlugin()],

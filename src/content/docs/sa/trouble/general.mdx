@@ -1,0 +1,75 @@
+---
+title: 'General Help'
+description: 'This page describes several steps a user can follow to troubleshoot their issue with MTA.'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import ClientDownload from '@src/components/ClientDownload.astro';
+import RedistributableDownload from '@src/components/RedistributableDownload.astro';
+import DirectXDownload from '@src/components/DirectXDownload.astro';
+
+<Steps>
+    1. Verify that you can run the GTA:SA singleplayer game.
+
+        **Step 1:** Navigate to your GTA:SA installation directory.
+        That location may very a lot, depending on how you obtained the game files,
+        but the original installer placed these files in one of the following directories:
+        ```
+        C:\Program Files (x86)\Rockstar Games\GTA San Andreas\
+        C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto San Andreas\
+        ```
+
+        **Step 2:** Launch the game by double-clicking on either `gta_sa.exe` or `gta-sa.exe`.
+        You might not see the `.exe` in the file name on your computer, but that's fine.
+
+        :::caution
+        If you can't launch the singleplayer game directly after following the steps above,
+        then try deleting the settings file for GTA:
+        ```
+        Documents\GTA San Andreas User Files\gta_sa.set
+        ```
+        And if the game still does not work, consider reinstalling it, or find a trusted source from
+        where you can buy and download the game.
+        :::
+
+    2. Install Microsoft runtime components.
+
+        <RedistributableDownload />
+
+    3. Download and install the legacy DirectX runtime.
+
+        <DirectXDownload />
+
+    4. Install the latest release of Multi Theft Auto.
+
+        <ClientDownload />
+
+    5. Ensure there is no d3d9.dll in the GTA installation directory.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - d3d9.dll  remove this file, if it exists
+            - gta_sa.exe
+            - …
+        </FileTree>
+
+    6. If you are using a software called `Evolve` then try disabling it.
+
+    7. Try to run Multi Theft Auto again.
+</Steps>
+
+:::note
+Consider restarting your computer after these installations for good measure, if
+MTA still fails to launch.
+
+And do not despair, you can always contact us either on Discord or in the forums.
+You can find the links at the bottom of the page.
+:::
