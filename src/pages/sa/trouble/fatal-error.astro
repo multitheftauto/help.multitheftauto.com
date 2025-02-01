@@ -1,0 +1,10 @@
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorCode = urlParams.get('code') || '0';
+
+    if (errorCode === '12') {
+        window.location.href = '/sa/trouble/server-fatal-error/';
+    } else {
+        window.location.href = '/sa/trouble/client-fatal-error/';
+    }
+</script>

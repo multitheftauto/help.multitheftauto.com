@@ -10,9 +10,28 @@ const siteBaseUrl = isDeploy ? constants.SITE_URL : undefined;
 export default defineConfig({
     site: siteBaseUrl,
     redirects: {
-        '/sa/trouble/crashing-before-gtagame/':   '/sa/trouble/general/',
-        '/sa/trouble/crashing-before-gtalaunch/': '/sa/trouble/general/',
+        '/sa/trouble/downgrade-steam/':           '/sa/trouble/downgrade/',
+        '/sa/trouble/serial-validation-ver/':     '/sa/trouble/serial-validation/',
+        '/sa/trouble/d3dcreatedevice-fail/':      '/guides/graphics-drivers-issues/',
+        '/sa/trouble/d3dresetdevice-fail/':       '/guides/graphics-drivers-issues/',
+        '/sa/trouble/error-subrastering/':        '/guides/graphics-drivers-issues/',
+        '/sa/trouble/fonts-create-sprite-fail/':  '/guides/graphics-drivers-issues/',
+        '/sa/trouble/gui-render/':                '/guides/graphics-drivers-issues/',
+        '/sa/trouble/asi-files/':                 '/guides/how-to-remove-asi-files/',
+        '/sa/trouble/au-revoir-xp-vista/':        '/general/system-requirements/',
+        '/sa/trouble/general/':                   '/guides/troubleshooting-guide/',
+        '/sa/trouble/gta_sa-missing/':            '/guides/troubleshooting-guide/',
+        '/sa/trouble/crashing-before-gtagame/':   '/guides/troubleshooting-guide/',
+        '/sa/trouble/crashing-before-gtalaunch/': '/guides/troubleshooting-guide/',
+        '/sa/trouble/loader-dll-missing/':        '/guides/troubleshooting-guide/',
+        '/sa/trouble/loader-dll-not-loadable/':   '/guides/troubleshooting-guide/',
+        '/sa/trouble/core-missing/':              '/guides/troubleshooting-guide/',
+        '/sa/trouble/core-not-loadable/':         '/guides/troubleshooting-guide/',
+        '/sa/trouble/client-missing/':            '/guides/troubleshooting-guide/',
+        '/sa/trouble/lua-missing/':               '/guides/troubleshooting-guide/',
+        '/sa/trouble/module-not-loadable/':       '/guides/troubleshooting-guide/',
     },
+    trailingSlash: 'always',
     integrations: [
         starlight({
             plugins: [mtasaStarlightThemePlugin()],
@@ -38,14 +57,12 @@ export default defineConfig({
             },
             sidebar: [
                 {
-                    label: 'Guides',
-                    items: [
-                        { label: 'Example Guide', slug: 'guides/example' },
-                    ],
+                    label: 'General',
+                    autogenerate: { directory: 'general' },
                 },
                 {
-                    label: 'Reference',
-                    autogenerate: { directory: 'reference' },
+                    label: 'Guides',
+                    autogenerate: { directory: 'guides' },
                 },
                 {
                     label: 'Troubleshooting',

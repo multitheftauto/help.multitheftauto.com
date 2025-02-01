@@ -1,0 +1,19 @@
+---
+import { CardGrid } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import * as defaults from '@src/content.constants';
+---
+
+<CardGrid>
+    <IconLinkCard
+        icon="linux"
+        title="Linux"
+        description="Recommended stable download for any Linux distribution."
+        href={defaults.LINUX_URL} />
+
+    <IconLinkCard
+        icon="seti:windows"
+        title="Windows"
+        description="Nightly download page for servers hosted on Windows (and Linux)."
+        href={defaults.NIGHTLY_URL} />
+</CardGrid>

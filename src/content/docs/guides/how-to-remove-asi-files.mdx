@@ -1,17 +1,22 @@
 ---
-title: 'ASI files'
-description: 'ASI files have been found'
+title: 'How To Remove *.asi Files'
+description: 'This guide describes the steps you have to follow to successfully remove ASI files from GTA and MTA directories.'
 tableOfContents: false
 ---
 
 import { Steps, FileTree } from '@astrojs/starlight/components';
 
-MTA detected ASI files either in your GTA:SA or MTA installation directory.
-
 <Steps>
     1. Navigate to your GTA San Andreas installation directory.
 
-    2. Remove all *.asi files in that directory and subdirectories.  
+        The exact path to the GTA:SA directory will be different on each machine,
+        but you should investigate default locations like these:
+        ```
+        C:\Program Files (x86)\Rockstar Games\GTA San Andreas\
+        C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto San Andreas\
+        ```
+
+    2. Delete all *.asi files in that directory and subdirectories.  
         The example file tree below highlights a subdirectory where you can find ASI files.
 
         <FileTree>
@@ -22,7 +27,7 @@ MTA detected ASI files either in your GTA:SA or MTA installation directory.
             - models/
             - movies/
             - scripts/
-                - **SilentPathSA.asi**  remove this file
+                - **SilentPathSA.asi**  delete this file
                 - …
             - text/
             - eax.dll

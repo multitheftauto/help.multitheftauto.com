@@ -1,0 +1,26 @@
+---
+title: 'Download Incorrect'
+description: 'MTA downloaded an update file, which became corrupted.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ClientDownload from '@src/components/ClientDownload.astro';
+import AntiVirusDownload from '@src/components/AntiVirusDownload.astro';
+
+<Steps>
+    1. Ensure you have a running anti-virus on your computer, if not,
+        then pick one of the solutions below:
+
+        <AntiVirusDownload />
+
+    2. Make sure your anti-virus software is up to date,
+        check if real-time scanning is enabled, and then
+        run a complete virus scan.
+
+    3. Install the latest release of Multi Theft Auto.
+
+        <ClientDownload />
+
+    3. Try to run Multi Theft Auto again.
+</Steps>
