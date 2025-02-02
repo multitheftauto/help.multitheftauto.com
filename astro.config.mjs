@@ -47,10 +47,6 @@ export default defineConfig({
             },
             social: {
                 github: 'https://github.com/multitheftauto/help.multitheftauto.com',
-                discord: 'https://discord.com/invite/mtasa',
-                youtube: 'https://youtube.com/user/mtaqa',
-                twitch: 'https://twitch.tv/mtaqa',
-                'x.com': 'https://x.com/mtaqa',
             },
             components: {
                 Pagination: './src/overrides/Pagination.astro',
