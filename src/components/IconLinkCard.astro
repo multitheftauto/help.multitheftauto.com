@@ -13,7 +13,7 @@ interface Props extends Omit<HTMLAttributes<'a'>, 'title'> {
     icon?: StarlightIcon;
 }
 
-const { title, description, icon, ...attributes } = Astro.props;
+const { title, description, icon, target = Astro.props.target || '_blank', ...attributes } = Astro.props;
 ---
 
 <div class="sl-link-card">
