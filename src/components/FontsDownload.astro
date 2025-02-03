@@ -1,7 +1,7 @@
 ---
 import { CardGrid } from '@astrojs/starlight/components';
 import IconLinkCard from '@src/components/IconLinkCard.astro';
-import * as defaults from '@src/content.constants';
+import { CDN_URL } from '@src/content.constants';
 ---
 
 <CardGrid>
@@ -9,17 +9,17 @@ import * as defaults from '@src/content.constants';
         icon="seti:font"
         title="Verdana"
         description="Download for verdana.ttf"
-        href=`${defaults.CDN_URL}/files/fonts/verdana.ttf` />
+        href=`${CDN_URL}/files/fonts/verdana.ttf` />
 
     <IconLinkCard
         icon="seti:font"
         title="Tahoma"
         description="Download for tahoma.ttf"
-        href=`${defaults.CDN_URL}/files/fonts/tahoma.ttf` />
+        href=`${CDN_URL}/files/fonts/tahoma.ttf` />
 
     <IconLinkCard
         icon="seti:font"
         title="Tahoma Bold"
         description="Download for tahomabd.ttf"
-        href=`${defaults.CDN_URL}/files/fonts/tahomabd.ttf` />
+        href=`${CDN_URL}/files/fonts/tahomabd.ttf` />
 </CardGrid>

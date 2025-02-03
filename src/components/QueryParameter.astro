@@ -1,0 +1,85 @@
+---
+interface Props {
+    name: string;
+    placeholder?: string;
+    wrapper?: boolean;
+}
+
+const { 
+    name,
+    placeholder = '',
+    wrapper = false,
+} = Astro.props;
+---
+
+<query-parameter data-name={name} data-wrapper={wrapper} data-placeholder={placeholder}>
+    <slot />
+</query-parameter>
+
+<script>
+    // Source: https://stackoverflow.com/a/74362432
+    function sanitize(input: string) {
+        const mapping: Record<string, string> = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#x27;',
+            '/': '&#x2F;',
+        };
+
+        const regularExpression = /[&<>"'/]/gi;
+        return input.replace(regularExpression, match => mapping[match]);
+    }
+
+    class QueryParameter extends HTMLElement {
+        constructor() {
+            super();
+
+            // Wrap this element with a div element, because this custom element can break the layout around it.
+            if (this.dataset.wrapper === 'true') {
+                const newParent = document.createElement('div');
+                this.parentNode?.replaceChild(newParent, this);
+                newParent.appendChild(this);
+            }
+
+            // Remove any whitespace text node right after this element, because we might have one before the injected script node,
+            // and it adds a whitespace character which we don't want.
+            if (this.nextSibling?.nodeType === Node.TEXT_NODE && this.nextSibling.textContent?.trim() === '') {
+                this.nextSibling.remove();
+            }
+        }
+
+        _replaceText(text: string, escapeText: boolean) {
+            text = text.replaceAll('\\', '/');
+
+            if (this.dataset.wrapper === 'true') {
+                const link = this.querySelector('a[href*="%s"]');
+
+                if (link instanceof HTMLAnchorElement) {
+                    link.href = link.href.replace('%s', text);
+                }
+            } else {
+                this.innerHTML = escapeText ? sanitize(text) : text;
+            }
+        }
+
+        connectedCallback() {
+            if (this.dataset.name) {
+                const urlParams = new URLSearchParams(window.location.search);
+
+                if (urlParams.has(this.dataset.name)) {
+                    const value = urlParams.get(this.dataset.name)!.trim();
+                    this._replaceText(value, true);
+                    return;
+                }
+            }
+
+            if (this.dataset.placeholder) {
+                this._replaceText(this.dataset.placeholder, false);
+            }
+        }
+    }
+
+    customElements.define('query-parameter', QueryParameter);
+</script>

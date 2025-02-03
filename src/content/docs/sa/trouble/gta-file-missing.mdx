@@ -1,0 +1,47 @@
+---
+title: 'Missing GTA:SA Files'
+description: 'Your GTA:SA installation is missing essential files that are required by GTA.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import BuyTheGame from '@src/components/BuyTheGame.astro';
+import QueryParameter from '@src/components/QueryParameter.astro';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import { CDN_URL } from '@src/content.constants';
+
+GTA San Andreas is missing <code><QueryParameter name="name" placeholder="a file" /></code>
+
+<Steps>
+    1. Install GTA San Andreas from a trusted source.
+
+        <BuyTheGame />
+
+    2. If that didn't work, try to download the file from our network.  
+        Be aware that we might not offer every file.
+
+        <QueryParameter name="name" wrapper="true" placeholder="not-provided">
+            <IconLinkCard
+                icon="cloud-download"
+                title="Try To Download"
+                description="We provide no guarantee that this file exists and is downloadable."
+                target="_blank"
+                href={`${CDN_URL}/files/%s`} />
+        </QueryParameter>
+
+    3. Copy the downloaded file to your GTA:SA installation directory.  
+        The path in the example will most likely not represent where your GTA:SA has been installed to,
+        but it should give you an idea where to place the file, and we leave the rest to you.
+
+        <pre data-language="plaintext">
+            <code>
+                <div class="ec-line">
+                    <div class="code">
+                        C:/Program Files (x86)/Rockstar Games/GTA San Andreas/<QueryParameter name="name" placeholder="a file" />
+                    </div>
+                </div>
+            </code>
+        </pre>
+
+    4. Try to run Multi Theft Auto again.
+</Steps>

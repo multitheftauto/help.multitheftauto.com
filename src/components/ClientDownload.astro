@@ -1,7 +1,7 @@
 ---
 import { CardGrid } from '@astrojs/starlight/components';
 import IconLinkCard from '@src/components/IconLinkCard.astro';
-import * as defaults from '@src/content.constants';
+import { CDN_URL } from '@src/content.constants';
 ---
 
 <CardGrid>
@@ -9,11 +9,11 @@ import * as defaults from '@src/content.constants';
         icon="seti:windows"
         title="Windows 10 & 11"
         description="Download for the latest release of Microsoft Windows"
-        href=`${defaults.CDN_URL}/mtasa/main/mtasa-1.6.exe` />
+        href=`${CDN_URL}/mtasa/main/mtasa-1.6.exe` />
 
     <IconLinkCard
         icon="seti:windows"
         title="Windows 7 & 8.x"
         description="Download for older releases of Microsoft Windows"
-        href=`${defaults.CDN_URL}/mtasa/main/mtasa_maetro-1.6.exe` />
+        href=`${CDN_URL}/mtasa/main/mtasa_maetro-1.6.exe` />
 </CardGrid>

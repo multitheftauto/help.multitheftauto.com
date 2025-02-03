@@ -1,8 +1,16 @@
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
+    let urlParams = new URLSearchParams(window.location.search);
     // const version = urlParams.get('v');
     // const serial = urlParams.get('id');
     const article = urlParams.get('tr') || 'crashing-before-gtagame';
 
-    window.location.href = '/sa/trouble/' + article + '/';
+    urlParams.delete('v');
+    urlParams.delete('id');
+    urlParams.delete('tr');
+    let remainingParams = urlParams.toString();
+    if (remainingParams) {
+        remainingParams = '?' + remainingParams;
+    }
+
+    window.location.href = '/sa/trouble/' + article + '/' + remainingParams;
 </script>

@@ -8,9 +8,12 @@ import { CardGrid, FileTree, Steps } from '@astrojs/starlight/components';
 import IconLinkCard from '@src/components/IconLinkCard.astro';
 import ClientDownload from '@src/components/ClientDownload.astro';
 import AntiVirusDownload from '@src/components/AntiVirusDownload.astro';
-import * as defaults from '@src/content.constants';
+import QueryParameter from '@src/components/QueryParameter.astro';
+import { CDN_URL } from '@src/content.constants';
 
 ## Timeout Codes
+
+Your connection has been closed with the error code <code><QueryParameter name="neterrorcode" placeholder="not provided" /></code>.
 
 #### `00070000` or `0A050000`
 
@@ -40,17 +43,17 @@ You must remove that software, if you want to play Multi Theft Auto.
             <IconLinkCard
                 icon="cloud-download"
                 title="ogg.dll"
-                href={`${defaults.CDN_URL}/files/ogg.dll`} />
+                href={`${CDN_URL}/files/ogg.dll`} />
 
             <IconLinkCard
                 icon="cloud-download"
                 title="vorbis.dll"
-                href={`${defaults.CDN_URL}/files/vorbis.dll`} />
+                href={`${CDN_URL}/files/vorbis.dll`} />
 
             <IconLinkCard
                 icon="cloud-download"
                 title="vorbisFile.dll"
-                href={`${defaults.CDN_URL}/files/vorbisFile.dll`} />
+                href={`${CDN_URL}/files/vorbisFile.dll`} />
         </CardGrid>
 
     2. Copy these files to your GTA:SA installation directory.

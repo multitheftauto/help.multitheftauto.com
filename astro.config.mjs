@@ -2,16 +2,17 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mtasaStarlightThemePlugin from '@multitheftauto/starlight-theme-mtasa';
-import * as constants from './src/content.constants';
+import { SITE_TITLE, SITE_URL } from './src/content.constants';
 
 const isDeploy = process.env.CI === 'true';
-const siteBaseUrl = isDeploy ? constants.SITE_URL : undefined;
+const siteBaseUrl = isDeploy ? SITE_URL : undefined;
 
 export default defineConfig({
     site: siteBaseUrl,
     redirects: {
         '/sa/trouble/downgrade-steam/':           '/sa/trouble/downgrade/',
         '/sa/trouble/serial-validation-ver/':     '/sa/trouble/serial-validation/',
+        '/sa/trouble/gengta_error/':              '/sa/trouble/createprocess-fail/',
         '/sa/trouble/d3dcreatedevice-fail/':      '/guides/graphics-drivers-issues/',
         '/sa/trouble/d3dresetdevice-fail/':       '/guides/graphics-drivers-issues/',
         '/sa/trouble/error-subrastering/':        '/guides/graphics-drivers-issues/',
@@ -35,7 +36,7 @@ export default defineConfig({
     integrations: [
         starlight({
             plugins: [mtasaStarlightThemePlugin()],
-            title: constants.SITE_TITLE,
+            title: SITE_TITLE,
             favicon: '/favicon.ico',
             logo: {
                 src: './src/assets/logo.png',
