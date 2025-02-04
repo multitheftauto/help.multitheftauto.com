@@ -1,0 +1,31 @@
+---
+title: 'NVIDIA Optimus Detected'
+description: 'MTA has detected NVIDIA Optimus on your system and requires your input to select an option.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+import ClientDownload from '@src/components/ClientDownload.astro';
+
+<Steps>
+    1. Try each option after another, until you are satisfied with one.  
+        Start with first option, check if it works, and if not, continue with the next options.
+
+    2. If none of the options work for you, then update your NVIDIA drivers.
+
+        <IconLinkCard
+            icon="external"
+            title="NVIDIA"
+            description="Download latest drivers for NVIDIA GPUs"
+            href="https://www.nvidia.com/en-us/drivers/" />
+
+    3. Download and install the latest release of MTA.
+
+        <ClientDownload />
+
+    4. Try to run Multi Theft Auto again.
+
+    5. If that didn't resolve the issue, then contact MTA support.  
+        Use the links at the bottom of the page to find us.
+</Steps>

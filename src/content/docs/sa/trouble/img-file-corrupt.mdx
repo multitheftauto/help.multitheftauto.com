@@ -1,0 +1,29 @@
+---
+title: 'IMG File Is Corrupt'
+description: 'A GTA:SA archive file is corrupt and requires repairs.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import BuyTheGame from '@src/components/BuyTheGame.astro';
+import QueryParameter from '@src/components/QueryParameter.astro';
+
+A GTA San Andreas file <code><QueryParameter name="name" placeholder="not provided" /></code> is corrupt and is unusable.
+Follow the steps below to resolve the issue.
+
+<Steps>
+    1. Install GTA San Andreas from a trusted source.
+
+        <BuyTheGame />
+
+        :::note
+        Your game installation might use a modified <code>gta3.img</code> model archive,
+        with modifications that are not compatible with GTA:SA or MTA. We always recommend
+        to buy GTA from an official source that doesn't contain broken mods.
+        :::
+
+    2. Try to run Multi Theft Auto again.
+
+    3. If that didn't resolve the issue, then contact MTA support.  
+        Use the links at the bottom of the page to find us.
+</Steps>

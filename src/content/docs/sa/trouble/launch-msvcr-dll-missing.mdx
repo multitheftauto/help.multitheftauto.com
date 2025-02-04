@@ -1,0 +1,46 @@
+---
+title: 'Redistributable Package Not Installed'
+description: 'Your system is missing an essential Microsoft Visual C++ Redistributable that is required by MTA to operate.'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+import { CDN_URL } from '@src/content.constants';
+import RedistributableDownload from '@src/components/RedistributableDownload.astro';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+
+Your system is missing an essential Microsoft Visual C++ Redistributable that is required by MTA to operate.
+
+<Steps>
+    1. Install Microsoft runtime components.
+
+        <RedistributableDownload />
+
+    2. Ensure there is no d3d9.dll in the GTA installation directory.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - d3d9.dll  remove this file, if it exists
+            - gta_sa.exe
+            - …
+        </FileTree>
+
+    3. Try to run Multi Theft Auto again.
+
+    4. If all that didn't work, install this into the MTA installation directory:
+
+        <IconLinkCard
+            icon="cloud-download"
+            title="MTA:SA fix for Windows 7 update failure"
+            description="Download for runtime components installer"
+            href={`${CDN_URL}/files/mtasa-1.5-win7-update-failure-fix.exe`} />
+
+    5. If that didn't resolve the issue, then contact MTA support.  
+        Use the links at the bottom of the page to find us.
+</Steps>
