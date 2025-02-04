@@ -1,0 +1,12 @@
+---
+title: 'Protocol Error'
+description: 'MTA ran into a protocol issue and cut the connection to the server.'
+tableOfContents: false
+---
+
+import ClientDownload from '@src/components/ClientDownload.astro';
+import QueryParameter from '@src/components/QueryParameter.astro';
+
+MTA encountered protocol error <code><QueryParameter name="code" placeholder="not provided" /></code> while connected to a MTA server. This issue might've been fixed in a more recent release of MTA, which is why we advise you to download and install the latest stable MTA version:
+
+<ClientDownload />
