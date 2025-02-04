@@ -1,0 +1,29 @@
+---
+title: 'Kick for Screen Recorders'
+description: 'MTA detected the presence of a prohibited screen recording software.'
+tableOfContents: false
+---
+
+:::note
+This problem only occurs on very specific MTA servers which enabled a special detection option in the server configuration.
+This kind of software **is not** prohibited on every MTA server.
+
+If we identify more software that fits into this category, then they may be added to this detection in the future.
+:::
+
+You have been kicked for running certain recording software on a server that prohibits them.
+
+Servers that are interested in blocking it, are now able to do so by enabling SD (Special Detection) #35.  
+The reason is that players (especially on racing/DD/DM servers) were using the 'FPS lock' feature and
+its bind in recording tools such as (for example) `Fraps` and `Bandicam`.
+
+This resulted in unfair advantage like:
+- Taking loops faster, and increasing vehicle speed.
+- Hitting a bind to activate/deactivating FPS locker whenever they need a speed or vehicle agility difference.
+
+For more information, please refer to the [MTA AC guide](https://wiki.multitheftauto.com/wiki/Anti-cheat_guide),
+specifically `SD #35`.
+
+### Solution
+
+Use a different recording tool. There's plenty of alternatives, and so far we know only of Fraps and Bandicam when it comes to ones with FPS locking capabilities. Restart MTA even after closing Fraps/Bandicam, to stop being kicked.
