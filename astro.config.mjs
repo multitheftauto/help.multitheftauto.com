@@ -2,10 +2,10 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mtasaStarlightThemePlugin from '@multitheftauto/starlight-theme-mtasa';
-import { SITE_TITLE, SITE_URL } from './src/content.constants';
+import { SITE_TITLE, SITE_URL, SITE_PREVIEW_URL } from './src/content.constants';
 
 const isDeploy = process.env.CI === 'true';
-const siteBaseUrl = isDeploy ? SITE_URL : undefined;
+const siteBaseUrl = isDeploy ? SITE_URL : SITE_PREVIEW_URL;
 
 export default defineConfig({
     site: siteBaseUrl,
