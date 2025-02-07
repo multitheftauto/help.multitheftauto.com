@@ -55,7 +55,9 @@ export default defineConfig({
             title: SITE_TITLE,
             favicon: '/favicon.ico',
             logo: {
-                src: './src/assets/logo.png',
+                light: './src/assets/light-logo.png',
+                dark: './src/assets/dark-logo.png',
+                replacesTitle: true,
             },
             titleDelimiter: '—',
             lastUpdated: true,
