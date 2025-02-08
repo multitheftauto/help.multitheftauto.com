@@ -84,6 +84,15 @@ export default defineConfig({
                     autogenerate: { directory: 'sa/trouble' },
                 },
             ],
+            head: [
+                {
+                    tag: 'meta',
+                    attrs: {
+                        name: 'keywords',
+                        content: 'MTA,GTA,R*,Rockstar,North,Multi,Grand,Theft,Auto,Multiplayer,orange,san,andreas,mp,mod,modification,free,download,help,knowledge,base,guide,faq',
+                    },
+                },
+            ],
         }),
     ],
 });
