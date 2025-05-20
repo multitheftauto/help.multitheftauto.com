@@ -64,9 +64,9 @@ export default defineConfig({
             editLink: {
                 baseUrl: 'https://github.com/multitheftauto/help.multitheftauto.com/edit/main/',
             },
-            social: {
-                github: 'https://github.com/multitheftauto/help.multitheftauto.com',
-            },
+            social: [
+                { icon: 'github', label: 'GitHub', href: 'https://github.com/multitheftauto/help.multitheftauto.com' },
+            ],
             components: {
                 Pagination: './src/overrides/Pagination.astro',
             },
