@@ -1,0 +1,46 @@
+---
+title: '*.asi Dosyaları Nasıl Kaldırılır'
+description: 'Bu kılavuz, GTA ve MTA dizinlerinden ASI dosyalarını başarılı bir şekilde kaldırmak için izlemeniz gereken adımları açıklar.'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+
+<Steps>
+    1. GTA San Andreas kurulum dizininize gidin.
+
+        GTA:SA dizininin tam yolu her bilgisayarda farklı olabilir,
+        ancak varsayılan olarak şu konumlarda bulunabilir:
+        ```
+        C:\Program Files (x86)\Rockstar Games\GTA San Andreas\
+        C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto San Andreas\
+        ```
+
+    2. Bu dizindeki ve alt dizinlerdeki tüm *.asi dosyalarını silin.  
+        Aşağıdaki örnek klasör yapısında, ASI dosyalarını bulabileceğiniz örnek bir alt dizin gösterilmektedir.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - scripts/
+                - **SilentPathSA.asi**  bu dosyayı silin
+                - …
+            - text/
+            - eax.dll
+            - gta_sa.exe
+            - ogg.dll
+            - vorbis.dll
+            - vorbisFile.dll
+        </FileTree>
+
+        :::note
+        Bu ASI dosyalarını kolayca aratıp bulmak için Windows Gezgini'nin arama özelliğini kullanabilirsiniz.
+        `*.asi` şeklinde bir arama yaparak arama sonuçlarında yalnızca ASI uzantılı dosyaların listelenmesini sağlayabilirsiniz.
+        :::
+
+    3. MTA San Andreas kurulum dizininize gidin ve aynı 2. adımı orada da tekrarlayın.
+</Steps>

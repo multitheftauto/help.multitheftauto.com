@@ -1,0 +1,46 @@
+---
+title: 'Gereksinim Paketi Kurulu Değil'
+description: 'Sisteminizde, MTA’nın çalışabilmesi için gerekli olan temel bir Microsoft Visual C++ Yeniden Dağıtılabilir paketi eksik.'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+import { CDN_URL } from '../../../../../content.constants';
+import RedistributableDownload from '../../../../../components/RedistributableDownload.astro';
+import IconLinkCard from '../../../../../components/IconLinkCard.astro';
+
+Sisteminizde, MTA’nın çalışabilmesi için gerekli olan temel bir Microsoft Visual C++ Yeniden Dağıtılabilir (Redistributable) paketi eksik.
+
+<Steps>
+    1. Microsoft çalışma zamanı bileşenlerini yükleyin.
+
+        <RedistributableDownload />
+
+    2. GTA kurulum dizininde d3d9.dll dosyasının bulunmadığından emin olun.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - d3d9.dll  varsa bu dosyayı silin
+            - gta_sa.exe
+            - …
+        </FileTree>
+
+    3. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    4. Bunların hiçbiri işe yaramadıysa, bunu MTA kurulum dizinine yükleyin:
+
+        <IconLinkCard
+            icon="cloud-download"
+            title="Windows 7 güncelleme hatası için MTA:SA düzeltmesi"
+            description="Çalışma zamanı bileşenleri yükleyicisi indirme bağlantısı"
+            href={`${CDN_URL}/files/mtasa-1.5-win7-update-failure-fix.exe`} />
+
+    5. Bu işlem sorunu çözmediyse, MTA destek ekibi ile iletişime geçin.  
+       Bize ulaşmak için sayfanın altındaki bağlantıları kullanabilirsiniz.
+</Steps>

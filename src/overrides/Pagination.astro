@@ -18,3 +18,48 @@ import IconLinkCard from '@src/components/IconLinkCard.astro';
             href="https://forum.multitheftauto.com/forum/82-support-for-mtasa-1x/" />
     </CardGrid>
 </div>
+
+<script>
+    // Accordion sidebar: close other open dropdowns when one is opened
+    function initSidebarAccordion() {
+        const sidebarDetails = document.querySelectorAll('nav details');
+        
+        // Find the active page link (aria-current="page")
+        const activeLink = document.querySelector('nav a[aria-current="page"]');
+        let activeParentDetails = null;
+        if (activeLink) {
+            activeParentDetails = activeLink.closest('details');
+        }
+
+        sidebarDetails.forEach((details) => {
+            // Set name attribute for native accordion behavior in modern browsers
+            details.setAttribute('name', 'starlight-sidebar');
+
+            // Keep the active category open, close all others on load
+            if (activeParentDetails) {
+                if (details === activeParentDetails) {
+                    details.open = true;
+                } else {
+                    details.open = false;
+                }
+            }
+
+            // Fallback event listener for older browser compatibility
+            details.addEventListener('toggle', () => {
+                if (details.open) {
+                    sidebarDetails.forEach((otherDetails) => {
+                        if (otherDetails !== details && otherDetails.open) {
+                            otherDetails.open = false;
+                        }
+                    });
+                }
+            });
+        });
+    }
+
+    // Run on page load
+    initSidebarAccordion();
+    document.addEventListener('astro:page-load', initSidebarAccordion);
+</script>
+
+

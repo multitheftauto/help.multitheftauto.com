@@ -1,0 +1,39 @@
+---
+title: 'Seri Numarası Doğrulama'
+description: 'MTA seri numaranızı doğrulayamadı'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import InlineIcon from '../../../../../components/InlineIcon.astro';
+
+MTA seri numaranızı doğrulayamadı. Aşağıdan işletim sisteminize uygun adımları takip edin.
+
+### <InlineIcon name="seti:windows" /> Windows
+<Steps>
+    1. MTA'yı herhangi bir Sanal Makinenin dışında kurun ve çalıştırın.
+
+    2. Sanal Makine içindeki MTA'yı tekrar deneyin.
+</Steps>
+
+:::caution
+Windows'ta bu sorun, seri numarası değiştirme veya donanım kimliği gizleme (spoofing) yazılımlarından kaynaklanabilir.
+Bu tür yazılımların neden olduğu hasarı geri alma sürecinde size kişisel olarak rehberlik etmeyeceğiz, ancak tüm işletim sisteminizi yeniden kurmanızı önerebiliriz.
+
+Ayrıca, internetten rastgele bir yazılım çalıştırdığınızı unutmamak önemlidir. Bilgisayarınız bir [botnet](https://tr.wikipedia.org/wiki/Botnet) parçası haline gelmiş veya şu anda [izleniyor (spyware)](https://tr.wikipedia.org/wiki/Casus_yazılım) olabilir.
+:::
+
+### <InlineIcon name="linux" /> Linux
+<Steps>
+    1. [Linux MTA sunucusunu](https://wiki.multitheftauto.com/wiki/Installing_and_Running_MTASA_Server_on_GNU_Linux) (root olarak) herhangi bir Sanal Makinenin dışında kurun ve çalıştırın.
+
+    2. Sanal Makine içindeki MTA istemcisini tekrar deneyin.
+</Steps>
+
+### <InlineIcon name="apple" /> macOS
+<Steps>
+    1. Mac bilgisayarınızda, herhangi bir Sanal Makinenin dışında [bu dosyayı indirip çalıştırın](https://nightly.multitheftauto.com/files/osx/OSXMTATool.zip).  
+       (Eğer macOS aracı çalıştırmayı reddederse, Sistem Tercihleri'ni açın, ardından Güvenlik ve Gizlilik'e tıklayın, ardından “Yine de Aç” butonuna tıklayın)
+
+    2. Sanal Makine içindeki MTA'yı tekrar deneyin.
+</Steps>

@@ -1,0 +1,77 @@
+---
+title: 'Sorun Giderme Kılavuzu'
+description: 'Bu sayfa, bir kullanıcının MTA ile ilgili yaşadığı sorunları gidermek için uygulayabileceği adımları açıklamaktadır.'
+tableOfContents: false
+---
+
+import { Steps, FileTree } from '@astrojs/starlight/components';
+import IconLinkCard from '../../../../components/IconLinkCard.astro';
+import ClientDownload from '../../../../components/ClientDownload.astro';
+import RedistributableDownload from '../../../../components/RedistributableDownload.astro';
+import DirectXDownload from '../../../../components/DirectXDownload.astro';
+
+<Steps>
+    1. GTA:SA tek oyunculu (singleplayer) oyununu çalıştırabildiğinizden emin olun.
+
+        **Adım 1:** GTA:SA kurulum dizininize gidin.
+        Oyun dosyalarını nasıl edindiğinize bağlı olarak bu konum büyük ölçüde değişiklik gösterebilir,
+        ancak orijinal yükleyici bu dosyaları aşağıdaki dizinlerden birine yerleştirir:
+        ```
+        C:\Program Files (x86)\Rockstar Games\GTA San Andreas\
+        C:\Program Files (x86)\Steam\steamapps\common\Grand Theft Auto San Andreas\
+        ```
+
+        **Adım 2:** `gta_sa.exe` veya `gta-sa.exe` dosyasına çift tıklayarak oyunu başlatın.
+        Bilgisayarınızda dosya adının sonundaki `.exe` uzantısını görmüyor olabilirsiniz, bu normaldir.
+
+        :::caution
+        Yukarıdaki adımları takip etmenize rağmen tek oyunculu oyunu başlatamıyorsanız,
+        GTA ayar dosyasını silmeyi deneyin:
+        ```
+        Belgeler\GTA San Andreas User Files\gta_sa.set
+        ```
+        Oyun hala çalışmıyorsa, oyunu yeniden yüklemeyi deneyin veya oyunu satın alıp indirebileceğiniz güvenilir bir kaynak bulun.
+        :::
+
+    2. Microsoft çalışma zamanı (runtime) bileşenlerini yükleyin.
+
+        <RedistributableDownload />
+
+    3. Eski DirectX bileşenlerini indirin ve yükleyin.
+
+        <DirectXDownload />
+
+    4. Multi Theft Auto'nun en son sürümünü indirin ve kurun.
+
+        <ClientDownload />
+
+    5. GTA kurulum dizininde d3d9.dll dosyasının bulunmadığından emin olun.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - d3d9.dll  varsa bu dosyayı silin
+            - gta_sa.exe
+            - …
+        </FileTree>
+
+    6. Oyunla çakışabilecek üçüncü taraf programları kapatın, örneğin:
+
+        - Evolve
+        - RivaTuner
+        - MSI Afterburner
+
+    7. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+</Steps>
+
+:::note
+MTA hala başlatılamıyorsa, bu yüklemelerden sonra bilgisayarınızı yeniden başlatmayı deneyin.
+
+Ve endişelenmeyin, bize her zaman Discord veya forumlarımız üzerinden ulaşabilirsiniz.
+Bağlantıları sayfanın en altında bulabilirsiniz.
+:::
