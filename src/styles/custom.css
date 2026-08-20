@@ -1,0 +1,306 @@
+/* MTA Branding Stylesheet */
+
+:root {
+    /* MTA Orange Accent Colors (Dark Theme - Default) */
+    --sl-color-accent-low: #331502;
+    --sl-color-accent: #C55F13;
+    --sl-color-accent-high: #e0731f;
+    --sl-color-text-accent: #e0731f;
+    --sl-color-bg-accent: #C55F13;
+
+    /* Custom tweaks for dark mode background */
+    --sl-color-bg: #212529;
+    --sl-color-gray-6: #191c1f;
+    --sl-color-gray-5: #343a40;
+    --sl-color-gray-4: #495057;
+}
+
+:root[data-theme='light'] {
+    /* MTA Orange Accent Colors (Light Theme) */
+    --sl-color-accent-low: #ffebe0;
+    --sl-color-accent: #C55F13;
+    --sl-color-accent-high: #94440a;
+    --sl-color-text-accent: #94440a;
+    --sl-color-bg-accent: #C55F13;
+
+    /* Custom tweaks for light mode background */
+    --sl-color-bg: #ffffff;
+    --sl-color-gray-6: #f4f5f6;
+    --sl-color-gray-5: #e1e4e6;
+    --sl-color-gray-4: #cdd2d5;
+}
+
+/* Custom Scrollbar for modern feel */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--sl-color-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--sl-color-gray-5);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--sl-color-accent);
+}
+
+/* Card hover and link focus enhancements */
+.sl-link-card {
+    transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, transform 0.15s ease-out, background-color 0.15s ease-out;
+}
+
+.sl-link-card:hover {
+    border-color: var(--sl-color-accent) !important;
+    box-shadow: 0 4px 12px rgba(197, 95, 19, 0.12);
+    transform: translateY(-1px);
+}
+
+.sl-link-card .icon {
+    transition: color 0.15s ease-out;
+}
+
+a, button {
+    transition: color 0.12s ease-out, background-color 0.12s ease-out, border-color 0.12s ease-out;
+}
+
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+}
+
+/* Steps (Adımlar) component styling overrides */
+.sl-steps > li::before {
+    background-color: var(--sl-color-accent) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.sl-steps > li::after {
+    background-color: rgba(197, 95, 19, 0.25) !important;
+    width: 2px !important;
+    left: calc((var(--bullet-size) - 2px) / 2) !important;
+}
+
+[dir="rtl"] .sl-steps > li::after {
+    right: calc((var(--bullet-size) - 2px) / 2) !important;
+    left: auto !important;
+}
+
+/* Kenar Çubuğu (Sidebar) İkonları */
+.top-level > li:nth-child(1) summary .group-label::before,
+.top-level > li:nth-child(2) summary .group-label::before,
+.top-level > li:nth-child(3) summary .group-label::before {
+    content: '';
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    vertical-align: middle;
+    margin-inline-end: 0.5rem;
+    background-color: var(--sl-color-accent);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    transition: background-color 0.15s ease-out;
+}
+
+/* Üzerine gelindiğinde ikonların parlaması */
+.top-level > li summary:hover .group-label::before {
+    background-color: var(--sl-color-accent-high);
+}
+
+/* General - Kitap/Belge İkonu */
+.top-level > li:nth-child(1) summary .group-label::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' /%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' /%3E%3C/svg%3E");
+}
+
+/* Guides - Ampul/Rehber İkonu */
+.top-level > li:nth-child(2) summary .group-label::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' /%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' /%3E%3C/svg%3E");
+}
+
+/* Troubleshooting - Ünlem/Hata İkonu */
+.top-level > li:nth-child(3) summary .group-label::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /%3E%3C/svg%3E");
+}
+
+.group-label {
+    display: inline-flex !important;
+    align-items: center !important;
+}
+
+/* Leftbar Dropdown (details/summary) açılış animasyonu */
+details[open] > ul {
+    animation: slideDown 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Aside (Callout) styling */
+.starlight-aside {
+    border-radius: 6px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    padding: 1rem 1.25rem !important;
+    margin: 1.5rem 0 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+}
+
+.starlight-aside__title {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-weight: 600 !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 0 !important;
+}
+
+.starlight-aside__icon {
+    font-size: 1.25rem !important;
+    flex-shrink: 0 !important;
+}
+
+.starlight-aside__content {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+}
+
+
+
+/* Note Variant Styles */
+.starlight-aside--note {
+    background-color: rgba(59, 130, 246, 0.06) !important;
+    border-color: rgba(59, 130, 246, 0.15) !important;
+    border-left: 4px solid #3b82f6 !important;
+    color: var(--sl-color-gray-1) !important;
+}
+.starlight-aside--note .starlight-aside__title {
+    color: #3b82f6 !important;
+}
+.starlight-aside--note .starlight-aside__icon {
+    color: #3b82f6 !important;
+}
+
+/* Tip Variant Styles */
+.starlight-aside--tip {
+    background-color: rgba(34, 197, 94, 0.06) !important;
+    border-color: rgba(34, 197, 94, 0.15) !important;
+    border-left: 4px solid #22c55e !important;
+    color: var(--sl-color-gray-1) !important;
+}
+.starlight-aside--tip .starlight-aside__title {
+    color: #22c55e !important;
+}
+.starlight-aside--tip .starlight-aside__icon {
+    color: #22c55e !important;
+}
+
+/* Caution Variant Styles */
+.starlight-aside--caution {
+    background-color: rgba(197, 95, 19, 0.06) !important;
+    border-color: rgba(197, 95, 19, 0.15) !important;
+    border-left: 4px solid #C55F13 !important;
+    color: var(--sl-color-gray-1) !important;
+}
+.starlight-aside--caution .starlight-aside__title {
+    color: #C55F13 !important;
+}
+.starlight-aside--caution .starlight-aside__icon {
+    color: #C55F13 !important;
+}
+
+/* Danger Variant Styles */
+.starlight-aside--danger {
+    background-color: rgba(239, 68, 68, 0.06) !important;
+    border-color: rgba(239, 68, 68, 0.15) !important;
+    border-left: 4px solid #ef4444 !important;
+    color: var(--sl-color-gray-1) !important;
+}
+.starlight-aside--danger .starlight-aside__title {
+    color: #ef4444 !important;
+}
+.starlight-aside--danger .starlight-aside__icon {
+    color: #ef4444 !important;
+}
+
+/* Light Theme overrides for better contrast and legibility */
+:root[data-theme='light'] .starlight-aside--note {
+    background-color: #f0f7ff !important;
+    border-color: #bfdbfe !important;
+}
+:root[data-theme='light'] .starlight-aside--tip {
+    background-color: #f0fdf4 !important;
+    border-color: #bbf7d0 !important;
+}
+:root[data-theme='light'] .starlight-aside--caution {
+    background-color: #fff7ed !important;
+    border-color: #ffedd5 !important;
+}
+:root[data-theme='light'] .starlight-aside--danger {
+    background-color: #fef2f2 !important;
+    border-color: #fee2e2 !important;
+}
+
+/* Header (Navbar) Styling */
+header.header {
+    background-color: #212529 !important;
+    border-bottom: 1px solid var(--sl-color-gray-5) !important;
+}
+
+/* Navbardaki sosyal medya ikonlarını nötr gri renge (ve hoverda beyaza) eşitleme */
+header.header a[rel="me"] {
+    color: var(--sl-color-gray-3) !important;
+    transition: color 0.15s ease-out !important;
+}
+
+header.header a[rel="me"]:hover {
+    color: var(--sl-color-white) !important;
+    opacity: 1 !important;
+}
+
+/* Expressive Code Copy (Kopyala) Butonu Tasarımı */
+.expressive-code button.copy,
+.expressive-code .copy button,
+figure.rehype-expressive-code button.copy,
+.expressive-code-figure button.copy,
+button.copy {
+    opacity: 0.35 !important;
+    transition: opacity 0.15s ease-out !important;
+}
+
+.expressive-code button.copy:hover,
+.expressive-code .copy button:hover,
+figure.rehype-expressive-code button.copy:hover,
+.expressive-code-figure button.copy:hover,
+button.copy:hover {
+    opacity: 1 !important;
+}
+
+
+
+
+
+
+
+
