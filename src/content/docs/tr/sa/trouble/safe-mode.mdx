@@ -1,0 +1,28 @@
+---
+title: 'Güvenli Mod (Safe Mode)'
+description: "MTA, Windows 'Güvenli Mod'da başlatıldıysa çalışamaz."
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+    1. Normal modda başlatmak için bilgisayarınızı yeniden başlatın.
+
+    2. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    3. Bu işe yaramadıysa ve 'Güvenli Mod' hatası tekrar görünüyorsa,
+       başlangıç modunu manuel olarak değiştirmeniz gerekir. Sonraki adımlar bunu nasıl yapacağınızı açıklar.
+
+    4. `Windows Tuşu` + `R` tuşlarına aynı anda basarak 'Çalıştır' penceresini açın.  
+       Metin alanına `msconfig` yazın ve `Enter` tuşuna basın veya `Tamam` butonuna tıklayın.
+
+        ![Metin alanında "msconfig" yazan Çalıştır penceresi](../../../../../assets/run-window-msconfig.png)
+
+    5. Yeni açılan 'Sistem Yapılandırması' penceresinde, 'Önyükleme' (Boot) sekmesine geçin ve ardından Güvenli Önyükleme olmadan başlatmak istediğiniz işletim sistemi için **'Güvenli Önyükleme' (Safe Boot) seçeneğindeki işareti kaldırın**.
+
+        ![Safe Boot seçeneğinin kapatıldığı Sistem Yapılandırması penceresi](../../../../../assets/system-configuration-safe-boot.png)
+
+    6. Bu işlem sorunu çözmediyse, MTA destek ekibi ile iletişime geçin.  
+       Bize ulaşmak için sayfanın altındaki bağlantıları kullanabilirsiniz.
+</Steps>

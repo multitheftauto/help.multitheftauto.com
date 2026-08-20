@@ -1,0 +1,27 @@
+---
+title: 'Ekran Kayıt Yazılımı Nedeniyle Oyundan Atılma'
+description: 'MTA yasaklanmış bir ekran kayıt yazılımının varlığını tespit etti.'
+tableOfContents: false
+---
+
+:::note
+Bu sorun, yalnızca sunucu yapılandırmasında özel bir tespit seçeneğini etkinleştiren belirli MTA sunucularında oluşur.
+Bu tür yazılımlar tüm MTA sunucularında yasak **değildir**.
+
+Gelecekte bu kategoriye giren benzer yazılımlar tespit edilirse, bu engelleme listesine eklenebilirler.
+:::
+
+Bu tür yazılımların kullanımını yasaklayan bir sunucuda ekran kayıt yazılımı çalıştırdığınız için oyundan atıldınız.
+
+Bunu engellemek isteyen sunucular, sunucu ayarlarından SD (Özel Tespit) #35'i etkinleştirerek bunu yapabilirler.
+Bunun nedeni, oyuncuların (özellikle yarış/DD/DM sunucularında) `Fraps` ve `Bandicam` gibi kayıt araçlarındaki 'FPS sabitleme' (FPS lock) özelliğini ve buna atanan kısayol tuşlarını kullanmasıdır.
+
+Bu durum şu gibi haksız avantajlara yol açıyordu:
+- Virajları/döngüleri daha hızlı dönmek ve araç hızını artırmak.
+- Hız veya araç çevikliği farkına ihtiyaç duyduklarında FPS sabitleyiciyi etkinleştirmek/devre dışı bırakmak için bir tuşa basmak.
+
+Daha detaylı bilgi için [MTA Anti-Cheat Kılavuzuna](https://wiki.multitheftauto.com/wiki/Anti-cheat_guide) (özellikle `SD #35` kısmına) göz atabilirsiniz.
+
+### Çözüm
+
+Farklı bir kayıt aracı kullanın. Pek çok alternatif var ve FPS sabitleme özelliğine sahip olanlardan şimdilik sadece Fraps ve Bandicam'i biliyoruz. Oyundan atılmamak için Fraps/Bandicam'i kapattıktan sonra bile MTA'yı yeniden başlatın.
