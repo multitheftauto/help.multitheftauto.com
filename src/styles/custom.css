@@ -90,7 +90,6 @@ button:focus-visible {
     left: auto !important;
 }
 
-/* Kenar Çubuğu (Sidebar) İkonları */
 .top-level > li:nth-child(1) summary .group-label::before,
 .top-level > li:nth-child(2) summary .group-label::before,
 .top-level > li:nth-child(3) summary .group-label::before {
@@ -110,24 +109,20 @@ button:focus-visible {
     transition: background-color 0.15s ease-out;
 }
 
-/* Üzerine gelindiğinde ikonların parlaması */
 .top-level > li summary:hover .group-label::before {
     background-color: var(--sl-color-accent-high);
 }
 
-/* General - Kitap/Belge İkonu */
 .top-level > li:nth-child(1) summary .group-label::before {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' /%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253' /%3E%3C/svg%3E");
 }
 
-/* Guides - Ampul/Rehber İkonu */
 .top-level > li:nth-child(2) summary .group-label::before {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' /%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' /%3E%3C/svg%3E");
 }
 
-/* Troubleshooting - Ünlem/Hata İkonu */
 .top-level > li:nth-child(3) summary .group-label::before {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /%3E%3C/svg%3E");
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' /%3E%3C/svg%3E");
@@ -138,7 +133,6 @@ button:focus-visible {
     align-items: center !important;
 }
 
-/* Leftbar Dropdown (details/summary) açılış animasyonu */
 details[open] > ul {
     animation: slideDown 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -268,7 +262,6 @@ header.header {
     border-bottom: 1px solid var(--sl-color-gray-5) !important;
 }
 
-/* Navbardaki sosyal medya ikonlarını nötr gri renge (ve hoverda beyaza) eşitleme */
 header.header a[rel="me"] {
     color: var(--sl-color-gray-3) !important;
     transition: color 0.15s ease-out !important;
@@ -279,7 +272,6 @@ header.header a[rel="me"]:hover {
     opacity: 1 !important;
 }
 
-/* Expressive Code Copy (Kopyala) Butonu Tasarımı */
 .expressive-code button.copy,
 .expressive-code .copy button,
 figure.rehype-expressive-code button.copy,
