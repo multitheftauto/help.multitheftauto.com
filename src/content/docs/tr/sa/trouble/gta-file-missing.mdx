@@ -1,0 +1,45 @@
+---
+title: 'Eksik GTA:SA Dosyaları'
+description: 'GTA:SA kurulumunuzda GTA için gerekli olan temel dosyalar eksik.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import BuyTheGame from '../../../../../components/BuyTheGame.astro';
+import QueryParameter from '../../../../../components/QueryParameter.astro';
+import IconLinkCard from '../../../../../components/IconLinkCard.astro';
+import { CDN_URL } from '../../../../../content.constants';
+
+GTA San Andreas kurulumunda <code><QueryParameter name="name" placeholder="bir dosya" /></code> eksik.
+
+<Steps>
+    1. GTA San Andreas'ı güvenilir bir kaynaktan yükleyin.
+
+        <BuyTheGame />
+
+    2. Bu işe yaramadıysa, dosyayı kendi ağımızdan indirmeyi deneyin.  
+       Her dosyayı sunamayabileceğimizi unutmayın.
+
+        <QueryParameter name="name" wrapper="true" placeholder="belirtilmedi">
+            <IconLinkCard
+                icon="cloud-download"
+                title="İndirmeyi Dene"
+                description="Bu dosyanın var olduğunu ve indirilebilir olduğunu garanti edemeyiz."
+                href={`${CDN_URL}/files/%s`} />
+        </QueryParameter>
+
+    3. İndirilen dosyayı GTA:SA kurulum dizininize kopyalayın.  
+       Örnekteki yol büyük olasılıkla sizin GTA:SA kurulum konumunuzu göstermeyecektir ancak dosyayı nereye yerleştirmeniz gerektiği konusunda size bir fikir verecektir; gerisini size bırakıyoruz.
+
+        <pre data-language="plaintext">
+            <code>
+                <div class="ec-line">
+                    <div class="code">
+                        C:/Program Files (x86)/Rockstar Games/GTA San Andreas/<QueryParameter name="name" placeholder="bir dosya" />
+                    </div>
+                </div>
+            </code>
+        </pre>
+
+    4. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+</Steps>

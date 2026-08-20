@@ -1,0 +1,63 @@
+---
+title: 'Network Troubleshooting'
+description: 'Troubleshooting network issues, connection timed out, and download failures in MTA.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '@src/components/IconLinkCard.astro';
+
+If you are experiencing connection issues such as "connection timed out/lost", network trouble, download failures, errors like `CD16`, or other issues that point to networking problems (such as the server list not showing any servers), please try the solutions below.
+
+### Solution 1: Reset Network Interfaces using Netfix
+
+<Steps>
+1. Download the `netfix.bat` script to reset common network configurations:
+
+   <IconLinkCard
+       icon="cloud-download"
+       title="Download netfix.bat"
+       description="Batch file to automatically reset network adapters and flush DNS (1 KB)"
+       href="/files/netfix.bat"
+       target="_self" />
+
+2. Locate the downloaded file in your file explorer, right-click it, and select **"Run as administrator"**.
+
+   ![Run netfix.bat as administrator](../../../../assets/run-as-administrator-netfix.png)
+
+3. Once the process completes, **restart your PC** and try connecting to MTA again.
+</Steps>
+
+---
+
+### Solution 2: Allow MTA through Firewall & Antivirus
+If the issue happens on many or all servers, it might be due to security software blocking MTA's traffic.
+
+* Ensure both `gta_sa.exe` and `Multi Theft Auto.exe` are allowed and whitelisted in your Windows Defender or 3rd party antivirus/firewall (for both **incoming** and **outgoing** traffic).
+
+---
+
+### Solution 3: Check Router Firewall Settings
+Sometimes strict internal firewalls inside your router can drop or block game traffic.
+
+<Steps>
+1. Log into your router's configuration page.
+   * You can find your gateway address by opening Command Prompt (`cmd.exe`) and typing `ipconfig`. Look for the "Default Gateway" IP address (e.g., `192.168.1.1` or `192.168.0.1`).
+   * Type this IP address into your web browser (Chrome, Edge, etc.) to access the login page.
+2. Login using the router's credentials.
+   * Default login information can usually be found on a sticker on the back/bottom of your physical router, or by searching your router model online.
+3. Locate the **Firewall** or **Security** tab, and temporarily set the firewall level to low (or disable strict packet filtering) to see if it resolves the connection drops.
+   * For a detailed guide on accessing your router configuration page, you can read [Port Forwarding Guide on the MTA Forum](https://forum.mtasa.com/topic/115141-guide-port-forwarding-in-order-to-run-a-mta-server/) (focus on the router login chapter).
+</Steps>
+
+---
+
+### Solution 4: ISP (Internet Service Provider) Issues
+If connection drops happen on all servers, it could be an issue with your Internet Service Provider dropping game traffic packets. 
+* Contact your ISP's support and report the issue.
+* If it happens on **one server only**, it is likely an issue on the server's side or a routing problem between your ISP/country and that server. You can check the path by opening Command Prompt (`cmd.exe`) and running:
+  ```cmd
+  tracert [IP_OF_THE_SERVER]
+  ```
+* In this case, report the problem to the server's administration.
+

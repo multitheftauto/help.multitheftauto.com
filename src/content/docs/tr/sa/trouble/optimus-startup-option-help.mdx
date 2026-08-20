@@ -1,0 +1,31 @@
+---
+title: 'NVIDIA Optimus Tespit Edildi'
+description: 'MTA sisteminizde NVIDIA Optimus tespit etti ve bir seçenek belirlemeniz için girdinizi bekliyor.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '../../../../../components/IconLinkCard.astro';
+import ClientDownload from '../../../../../components/ClientDownload.astro';
+
+<Steps>
+    1. Birinden memnun kalana kadar her seçeneği sırayla deneyin.  
+       İlk seçenekle başlayın, çalışıp çalışmadığını kontrol edin, çalışmazsa sonraki seçeneklerle devam edin.
+
+    2. Seçeneklerden hiçbiri işe yaramazsa, NVIDIA sürücülerinizi güncelleyin.
+
+        <IconLinkCard
+            icon="external"
+            title="NVIDIA"
+            description="NVIDIA GPU'ları için en son sürücüleri indirin"
+            href="https://www.nvidia.com/en-us/drivers/" />
+
+    3. MTA'nın en son sürümünü indirip kurun.
+
+        <ClientDownload />
+
+    4. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    5. Bu işlem sorunu çözmediyse, MTA destek ekibi ile iletişime geçin.  
+       Bize ulaşmak için sayfanın altındaki bağlantıları kullanabilirsiniz.
+</Steps>

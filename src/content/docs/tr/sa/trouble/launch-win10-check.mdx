@@ -1,0 +1,33 @@
+---
+title: 'Windows Sürümü Desteklenmiyor'
+description: 'Kullandığınız Windows sürümünde desteklenmeyen bir MTA:SA sürümünü çalıştırmaya çalışıyorsunuz.'
+tableOfContents: false
+---
+
+import { Steps, CardGrid } from '@astrojs/starlight/components';
+import ClientDownload from '../../../../../components/ClientDownload.astro';
+import IconLinkCard from '../../../../../components/IconLinkCard.astro';
+
+<Steps>
+    1. Multi Theft Auto'nun en son **uyumlu** sürümünü indirip kurun.
+
+        <ClientDownload />
+
+    2. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    3. İşletim sisteminiz en son sürümümüz tarafından desteklenmiyorsa, işletim sisteminizi Windows 10 veya daha yeni bir sürüme güncellemenizi öneririz.
+
+        <CardGrid>
+            <IconLinkCard
+                icon="external"
+                title="Windows 10"
+                description="Windows 10 İndirme Bağlantısı"
+                href="https://www.microsoft.com/en-us/software-download/windows10" />
+            
+            <IconLinkCard
+                icon="external"
+                title="Windows 11"
+                description="Windows 11 İndirme Bağlantısı"
+                href="https://www.microsoft.com/en-us/software-download/windows11" />
+        </CardGrid>
+</Steps>

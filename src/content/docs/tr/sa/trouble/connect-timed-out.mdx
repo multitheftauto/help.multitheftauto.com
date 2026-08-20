@@ -1,0 +1,87 @@
+---
+title: 'Bağlantı Zaman Aşımı (Connection Timeout)'
+description: 'Bağlantı zaman aşımı nedenleri için sorun giderme'
+tableOfContents: false
+---
+
+import { CardGrid, FileTree, Steps } from '@astrojs/starlight/components';
+import IconLinkCard from '../../../../../components/IconLinkCard.astro';
+import ClientDownload from '../../../../../components/ClientDownload.astro';
+import AntiVirusDownload from '../../../../../components/AntiVirusDownload.astro';
+import QueryParameter from '../../../../../components/QueryParameter.astro';
+import { CDN_URL } from '../../../../../content.constants';
+
+## Zaman Aşımı Kodları
+
+Bağlantınız <code><QueryParameter name="neterrorcode" placeholder="belirtilmedi" /></code> hata koduyla kapatıldı.
+
+#### `00070000` veya `0A050000`
+
+:::danger
+MTA cihazınızda olası virüs/kötü amaçlı yazılım etkinliği tespit etti.  
+Cihazınızdaki virüsü bulun ve temizleyin, ardından Multi Theft Auto'yu yeniden kurun.
+
+[İndirme](#indirme) bağlantılarını sayfanın en altında bulabilirsiniz.
+:::
+
+#### `FF0B0000` veya `FF0B0121`
+
+Multi Theft Auto için en son yükleyiciyi [indirin](#indirme) ve kurulumunuzu en son sürüme güncellemek için çalıştırın.
+
+#### `03040033`
+
+Bu sorun, MTA ile çakışan `Evolve` adlı bir yazılımdan kaynaklanmaktadır.
+Multi Theft Auto oynamak istiyorsanız bu yazılımı bilgisayarınızdan kaldırmalısınız.
+
+#### `4D0?????` veya `4E0?????` veya `4F0?????`
+
+<Steps>
+    1. Aşağıdaki dosyaları indirin.
+
+        <CardGrid>
+            <IconLinkCard
+                icon="cloud-download"
+                title="ogg.dll"
+                href={`${CDN_URL}/files/ogg.dll`} />
+
+            <IconLinkCard
+                icon="cloud-download"
+                title="vorbis.dll"
+                href={`${CDN_URL}/files/vorbis.dll`} />
+
+            <IconLinkCard
+                icon="cloud-download"
+                title="vorbisFile.dll"
+                href={`${CDN_URL}/files/vorbisFile.dll`} />
+        </CardGrid>
+
+    2. Bu dosyaları GTA:SA kurulum dizininize kopyalayın.
+        Windows dosyaları değiştirmek isteyip istemediğinizi sorduğunda üzerine yazmayı onaylayın.
+
+        <FileTree>
+        - <span>C:\\Program Files (x86)\\Rockstar Games\\GTA San Andreas\\</span>
+            - anim/
+            - audio/
+            - data/
+            - models/
+            - movies/
+            - text/
+            - **ogg.dll** buraya kopyalayın
+            - **vorbis.dll** buraya kopyalayın
+            - **vorbisFile.dll** buraya kopyalayın
+            - gta_sa.exe
+            - …
+        </FileTree>
+</Steps>
+
+#### `????????`
+
+Diğer zaman aşımı kodları, GTA:SA veya MTA kurulum dizininizdeki kötü amaçlı yazılımlardan, virüslerden veya bozuk dosyalardan kaynaklanabilir. İlk olarak MTA'yı yeniden yüklemeyi denemelisiniz. Sorun devam ederse, aşağıdaki anti-virüs programlarından birini indirip kurun.
+
+## İndirme
+
+### Anti-Virüs
+<AntiVirusDownload />
+
+### Multi Theft Auto
+<ClientDownload />

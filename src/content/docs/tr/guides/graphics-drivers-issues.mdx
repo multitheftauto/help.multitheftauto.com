@@ -1,0 +1,53 @@
+---
+title: 'Grafik Kartı Sürücüsü Sorunları'
+description: 'MTA çalıştırırken grafik kartı sürücüsü sorunlarıyla karşılaşıyorsanız bu kılavuzdaki adımları takip edin.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ClientDownload from '../../../../components/ClientDownload.astro';
+import DirectXDownload from '../../../../components/DirectXDownload.astro';
+import GpuDriverDownload from '../../../../components/GpuDriverDownload.astro';
+
+:::caution
+Eğer oyununuz `Alt-Tab` yaparken çöküyorsa, MTA ayarlar menüsünden tam ekran modunu değiştirmeyi deneyin:
+`Ayarlar > Gelişmiş > Tam Ekran Modu`.
+
+Bu durumda `Çerçevesiz pencere` (Borderless window) veya `Çözünürlüğü koru çerçevesiz` (Borderless keep res) seçeneklerini kullanmayı denemelisiniz.
+:::
+
+<Steps>
+    1. Eski DirectX bileşenlerini indirin ve yükleyin.
+
+        <DirectXDownload />
+
+    2. Multi Theft Auto'nun en son sürümünü indirin ve kurun.
+
+        <ClientDownload />
+
+    3. Grafik kartı sürücülerinizi güncelleyin.
+
+        <GpuDriverDownload />
+
+    4. Eğer bir dizüstü bilgisayar (notebook/laptop) kullanıyorsanız, üreticinin web sitesini ziyaret edin
+        ve en güncel grafik kartı sürücüsü de dahil olmak üzere cihazınız için en yeni sürücüleri indirin.
+
+        - [Acer](https://www.acer.com/us-en/support)
+        - [ASUS](https://www.asus.com/support/)
+        - [Toshiba](https://support.dynabook.com/support/drivers)
+
+    5. Oyunla çakışabilecek üçüncü taraf programları kapatın, örneğin:
+
+        - Evolve
+        - RivaTuner
+        - MSI Afterburner
+
+    6. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+</Steps>
+
+:::note
+MTA hala başlatılamıyorsa, bu yüklemelerden sonra bilgisayarınızı yeniden başlatmayı deneyin.
+
+Ve endişelenmeyin, bize her zaman Discord veya forumlarımız üzerinden ulaşabilirsiniz.
+Bağlantıları sayfanın en altında bulabilirsiniz.
+:::

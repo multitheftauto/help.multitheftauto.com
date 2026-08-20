@@ -1,0 +1,41 @@
+---
+title: 'Araç Modifikasyonu Eklenirken Hata'
+description: 'GTA:SA, bir araca modifikasyon eklerken sorun yaşadı.'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import BuyTheGame from '../../../../../components/BuyTheGame.astro';
+import QueryParameter from '../../../../../components/QueryParameter.astro';
+
+GTA San Andreas, <code><QueryParameter name="id" placeholder="belirtilmedi" /></code> numaralı araca,
+<code><QueryParameter name="frame" placeholder="belirtilmedi" /></code> frame bilgisiyle
+<code><QueryParameter name="upgid" placeholder="belirtilmedi" /></code> numaralı modifikasyon kimliğini eklerken sorun yaşadı.
+Sorunu çözmek için aşağıdaki adımları izleyin.
+
+<Steps>
+    1. Bilgisayarınızı yeniden başlatın ve ardından Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    2. Bu işe yaramadıysa, GTA San Andreas'ı güvenilir bir kaynaktan yükleyin.
+
+        <BuyTheGame />
+
+        :::note
+        Oyun kurulumunuz, GTA:SA veya MTA ile uyumlu olmayan modifikasyonlar içeren, değiştirilmiş bir <code>gta3.img</code> model arşivine sahip olabilir. Her zaman bozuk modlar içermeyen resmi bir kaynaktan GTA satın almanızı öneririz.
+        :::
+
+    3. Multi Theft Auto'yu tekrar çalıştırmayı deneyin.
+
+    4. Bu işe yaramadıysa, oynamaya çalıştığınız sunucu MTA ile uyumsuz modlar kullanmaya çalışıyor olabilir.
+
+       Sunucu sahibinden, <code><QueryParameter name="id" placeholder="belirtilmedi" /></code> model kimliğine ait modifikasyonlarını
+       ve <code><QueryParameter name="id" placeholder="belirtilmedi" /></code> modifikasyon kimliğine ait modifikasyonlarını doğrulamasını isteyin.
+
+        :::tip
+        Eğer destek ekibiyle iletişime geçebileceğiniz bir yol bulursanız, sunucu sahibini bu sorundan haberdar etmeye çalışın.
+        Sunucuların, oyuncularının donanım/yazılım kombinasyonlarıyla kendi sunucularındaki karmaşık mod listelerinin yaratabileceği her durumu veya koşulu test etmesi imkansızdır. Lütfen her sunucunun bu tür geri bildirimleri kabul etmeyebileceğini unutmayın.
+        :::
+
+    5. Bu işlem sorunu çözmediyse, MTA destek ekibi ile iletişime geçin.  
+       Bize ulaşmak için sayfanın altındaki bağlantıları kullanabilirsiniz.
+</Steps>

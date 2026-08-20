@@ -1,0 +1,25 @@
+---
+title: 'Dosya Kopyalama Hatası'
+description: 'MTA bir veya daha fazla dosyayı kopyalayamadı'
+tableOfContents: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import ClientDownload from '../../../../../components/ClientDownload.astro';
+
+MTA istemciniz dosyaları bir konumdan diğerine kopyalama sürecindeydi ancak bu işlemi başarıyla tamamlayamadı. Bunun gerçekleşmesinin birkaç sebebi olabilir. Sorunu çözmek için aşağıdaki adımları deneyin:
+
+:::note
+Sorunun çözülüp çözülmediğini görmek için **her** adımdan sonra MTA'yı başlatmayı denemenizi öneririz.
+:::
+
+<Steps>
+    1. Bilgisayarınızdaki tüm GTA:SA ve MTA uygulamalarını kapatmayı deneyin.  
+       Arka planda kalmış bir işlem, MTA'nın kopyalamaya çalıştığı dosyalara erişimi engelleyebilir.
+
+    2. Bilgisayarınızı yeniden başlatın.
+
+    3. En son MTA sürümünü indirip kurun.
+
+        <ClientDownload />
+</Steps>
